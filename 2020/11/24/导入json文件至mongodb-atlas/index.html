@@ -22,16 +22,21 @@
     var CONFIG = {"hostname":"zjx172.github.io","root":"/zjx172.github.io-blog/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zjx的博客">
-<meta property="og:url" content="https://zjx172.github.io/zjx172.github.io-blog/archives/index.html">
+  <meta name="description" content="12&gt;版本：MongoDB shell version v4.4.2  安装MongoDB Database Tools 该mongoimport工具是MongoDB数据库工具包的一部分： ➤遵循《数据库工具安装指南》进行安装mongoimport。  MongoDB Database Tools安装地址：https:&#x2F;&#x2F;www.mongodb.com&#x2F;try&#x2F;download&#x2F;datab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="导入json文件至mongodb atlas">
+<meta property="og:url" content="https://zjx172.github.io/zjx172.github.io-blog/2020/11/24/%E5%AF%BC%E5%85%A5json%E6%96%87%E4%BB%B6%E8%87%B3mongodb-atlas/index.html">
 <meta property="og:site_name" content="zjx的博客">
+<meta property="og:description" content="12&gt;版本：MongoDB shell version v4.4.2  安装MongoDB Database Tools 该mongoimport工具是MongoDB数据库工具包的一部分： ➤遵循《数据库工具安装指南》进行安装mongoimport。  MongoDB Database Tools安装地址：https:&#x2F;&#x2F;www.mongodb.com&#x2F;try&#x2F;download&#x2F;datab">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-24T06:21:11.000Z">
+<meta property="article:modified_time" content="2020-11-24T12:42:31.944Z">
 <meta property="article:author" content="zjx">
+<meta property="article:tag" content="mongodb">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://zjx172.github.io/zjx172.github.io-blog/archives/">
+<link rel="canonical" href="https://zjx172.github.io/zjx172.github.io-blog/2020/11/24/%E5%AF%BC%E5%85%A5json%E6%96%87%E4%BB%B6%E8%87%B3mongodb-atlas/">
 
 
 <script class="page-configurations">
@@ -39,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | zjx的博客</title>
+  <title>导入json文件至mongodb atlas | zjx的博客</title>
   
 
 
@@ -154,7 +159,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -166,6 +171,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85MongoDB-Database-Tools"><span class="nav-number">1.</span> <span class="nav-text">安装MongoDB Database Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80Mongo-Atlas%E7%BD%91%E7%AB%99%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7%E6%9F%A5%E8%AF%A2mongoimport%E8%BF%9E%E6%8E%A5mongo-atlas%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">打开Mongo Atlas网站登录账号查询mongoimport连接mongo atlas方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">References：</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -213,132 +219,108 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 5 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zjx172.github.io/zjx172.github.io-blog/2020/11/24/%E5%AF%BC%E5%85%A5json%E6%96%87%E4%BB%B6%E8%87%B3mongodb-atlas/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/zjx172.github.io-blog/images/avatar.gif">
+      <meta itemprop="name" content="zjx">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zjx的博客">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          导入json文件至mongodb atlas
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+
+      <time title="Created: 2020-11-24 14:21:11 / Modified: 20:42:31" itemprop="dateCreated datePublished" datetime="2020-11-24T14:21:11+08:00">2020-11-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;版本：</span><br><span class="line">MongoDB shell version v4.4.2</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="安装MongoDB-Database-Tools"><a href="#安装MongoDB-Database-Tools" class="headerlink" title="安装MongoDB Database Tools"></a>安装MongoDB Database Tools</h2><blockquote>
+<p>该<a target="_blank" rel="noopener" href="https://docs.mongodb.com/database-tools/mongoimport/#bin.mongoimport"><code>mongoimport</code></a>工具是<em>MongoDB数据库工具</em>包的一部分：</p>
+<p>➤遵循《<a target="_blank" rel="noopener" href="https://docs.mongodb.com/database-tools/installation/installation/">数据库工具安装指南》</a>进行安装<a target="_blank" rel="noopener" href="https://docs.mongodb.com/database-tools/mongoimport/#bin.mongoimport"><code>mongoimport</code></a>。</p>
+</blockquote>
+<p>MongoDB Database Tools安装地址：<code>https://www.mongodb.com/try/download/database-tools?tck=docs_databasetools</code></p>
+<p>将bin目录加入环境变量：<a target="_blank" rel="noopener" href="https://dangphongvanthanh.wordpress.com/2017/06/12/add-mongos-bin-folder-to-the-path-environment-variable/">Add Mongo’s bin folder to the Path Environment Variable</a></p>
+<h2 id="打开Mongo-Atlas网站登录账号查询mongoimport连接mongo-atlas方式："><a href="#打开Mongo-Atlas网站登录账号查询mongoimport连接mongo-atlas方式：" class="headerlink" title="打开Mongo Atlas网站登录账号查询mongoimport连接mongo atlas方式："></a>打开Mongo Atlas网站登录账号查询mongoimport连接mongo atlas方式：</h2><img class="-20201124200201307.png image">
+
+<p><code>注意database</code></p>
+<ul>
+<li>在命令行中mongoimport</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoimport --uri mongodb+srv:&#x2F;&#x2F;dbUser:&lt;PASSWORD&gt;@cluster0.susyw.mongodb.net&#x2F;&lt;DATABASE&gt; --collection &lt;COLLECTION&gt; --type &lt;FILETYPE&gt; --file &lt;FILENAME&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="References："><a href="#References：" class="headerlink" title="References："></a>References：</h2><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.mongodb.com/database-tools/mongoimport/#bin.mongoimport">mongoDB|文献资料—mongoimport</a>                                             </li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/61038521/mongoimport-for-mongodb-atlas-not-working-connection-string">mongoimport for MongoDB Atlas not working (connection string?)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/58190c20c948">MongoDB 的部分基本操作</a>                    </li>
+<li><a target="_blank" rel="noopener" href="https://www.docs4dev.com/docs/zh/mongodb/v3.6/reference/reference-program.html">mongodb软件包组件</a></li>
+</ul>
+</blockquote>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-24T14:21:11+08:00"
-              content="2020-11-24">
-          11-24
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/zjx172.github.io-blog/2020/11/24/%E5%AF%BC%E5%85%A5json%E6%96%87%E4%BB%B6%E8%87%B3mongodb-atlas/" itemprop="url">
-            <span itemprop="name">导入json文件至mongodb atlas</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/zjx172.github.io-blog/tags/mongodb/" rel="tag"># mongodb</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/zjx172.github.io-blog/2020/11/23/express%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%8E%A5%E5%85%A5MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="prev" title="express项目中接入MongoDB数据库">
+                  <i class="fa fa-chevron-left"></i> express项目中接入MongoDB数据库
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-23T16:30:43+08:00"
-              content="2020-11-23">
-          11-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/zjx172.github.io-blog/2020/11/23/express%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%8E%A5%E5%85%A5MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url">
-            <span itemprop="name">express项目中接入MongoDB数据库</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-23T15:24:13+08:00"
-              content="2020-11-23">
-          11-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/zjx172.github.io-blog/2020/11/23/heroku%E9%83%A8%E7%BD%B2%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3/" itemprop="url">
-            <span itemprop="name">heroku部署后端接口</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-22T19:39:34+08:00"
-              content="2020-11-22">
-          11-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/zjx172.github.io-blog/2020/11/22/%E4%BB%8E0%E7%94%A8webpack%E6%90%AD%E5%BB%BAvue%E9%A1%B9%E7%9B%AE/" itemprop="url">
-            <span itemprop="name">从0用webpack搭建vue项目</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-22T19:19:11+08:00"
-              content="2020-11-22">
-          11-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/zjx172.github.io-blog/2020/11/22/hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0github-page%E7%9A%84%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" itemprop="url">
-            <span itemprop="name">hexo博客部署到github page的完美解决方案</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
