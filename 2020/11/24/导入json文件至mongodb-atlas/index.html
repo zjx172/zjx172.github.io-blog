@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -19,20 +19,20 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"zjx172.github.io","root":"/zjx172.github.io-blog/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"zjx172.github.io","root":"/zjx172.github.io-blog/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
   <meta name="description" content="12&gt;版本：MongoDB shell version v4.4.2  安装MongoDB Database Tools 该mongoimport工具是MongoDB数据库工具包的一部分： ➤遵循《数据库工具安装指南》进行安装mongoimport。  MongoDB Database Tools安装地址：https:&#x2F;&#x2F;www.mongodb.com&#x2F;try&#x2F;download&#x2F;datab">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用mongoimport导入json文件至MongoDB Atlas并应用到mongoose中">
 <meta property="og:url" content="https://zjx172.github.io/zjx172.github.io-blog/2020/11/24/%E5%AF%BC%E5%85%A5json%E6%96%87%E4%BB%B6%E8%87%B3mongodb-atlas/index.html">
-<meta property="og:site_name" content="zjx的博客">
+<meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="12&gt;版本：MongoDB shell version v4.4.2  安装MongoDB Database Tools 该mongoimport工具是MongoDB数据库工具包的一部分： ➤遵循《数据库工具安装指南》进行安装mongoimport。  MongoDB Database Tools安装地址：https:&#x2F;&#x2F;www.mongodb.com&#x2F;try&#x2F;download&#x2F;datab">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale">
 <meta property="og:image" content="https://zjx172.github.io/zjx172.github.io-blog/2020/11/24/%E5%AF%BC%E5%85%A5json%E6%96%87%E4%BB%B6%E8%87%B3mongodb-atlas/image-20201124200201307.png">
 <meta property="article:published_time" content="2020-11-24T06:21:11.000Z">
 <meta property="article:modified_time" content="2020-11-25T07:04:17.871Z">
-<meta property="article:author" content="zjx">
+<meta property="article:author" content="Berkria">
 <meta property="article:tag" content="mongodb">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://zjx172.github.io/zjx172.github.io-blog/2020/11/24/%E5%AF%BC%E5%85%A5json%E6%96%87%E4%BB%B6%E8%87%B3mongodb-atlas/image-20201124200201307.png">
@@ -47,11 +47,11 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'en'
+    lang   : 'zh-Hans'
   };
 </script>
 
-  <title>使用mongoimport导入json文件至MongoDB Atlas并应用到mongoose中 | zjx的博客</title>
+  <title>使用mongoimport导入json文件至MongoDB Atlas并应用到mongoose中 | 个人博客</title>
   
 
 
@@ -103,7 +103,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -114,7 +114,7 @@
 
     <a href="/zjx172.github.io-blog/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">zjx的博客</h1>
+      <h1 class="site-title">个人博客</h1>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -131,17 +131,17 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/zjx172.github.io-blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/zjx172.github.io-blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/zjx172.github.io-blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/zjx172.github.io-blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/zjx172.github.io-blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/zjx172.github.io-blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
   </ul>
@@ -164,10 +164,10 @@
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -179,7 +179,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">zjx</p>
+  <p class="site-author-name" itemprop="name">Berkria</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap animated">
@@ -188,14 +188,14 @@
           <a href="/zjx172.github.io-blog/archives/">
         
           <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/zjx172.github.io-blog/tags/">
           
         <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -229,17 +229,17 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://zjx172.github.io/zjx172.github.io-blog/2020/11/24/%E5%AF%BC%E5%85%A5json%E6%96%87%E4%BB%B6%E8%87%B3mongodb-atlas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/zjx172.github.io-blog/images/avatar.gif">
-      <meta itemprop="name" content="zjx">
+      <meta itemprop="name" content="Berkria">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zjx的博客">
+      <meta itemprop="name" content="个人博客">
     </span>
 
     
@@ -255,16 +255,16 @@
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Posted on</span>
+      <span class="post-meta-item-text">发表于</span>
 
-      <time title="Created: 2020-11-24 14:21:11" itemprop="dateCreated datePublished" datetime="2020-11-24T14:21:11+08:00">2020-11-24</time>
+      <time title="创建时间：2020-11-24 14:21:11" itemprop="dateCreated datePublished" datetime="2020-11-24T14:21:11+08:00">2020-11-24</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-11-25 15:04:17" itemprop="dateModified" datetime="2020-11-25T15:04:17+08:00">2020-11-25</time>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-25 15:04:17" itemprop="dateModified" datetime="2020-11-25T15:04:17+08:00">2020-11-25</time>
       </span>
 
   
@@ -378,9 +378,9 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">zjx</span>
+  <span class="author" itemprop="copyrightHolder">Berkria</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
     </div>
