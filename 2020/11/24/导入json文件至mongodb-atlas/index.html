@@ -24,14 +24,14 @@
 
   <meta name="description" content="12&gt;版本：MongoDB shell version v4.4.2  安装MongoDB Database Tools 该mongoimport工具是MongoDB数据库工具包的一部分： ➤遵循《数据库工具安装指南》进行安装mongoimport。  MongoDB Database Tools安装地址：https:&#x2F;&#x2F;www.mongodb.com&#x2F;try&#x2F;download&#x2F;datab">
 <meta property="og:type" content="article">
-<meta property="og:title" content="导入json文件至MongoDB Atlas">
+<meta property="og:title" content="使用mongoimport导入json文件至MongoDB Atlas并应用到mongoose中">
 <meta property="og:url" content="https://zjx172.github.io/zjx172.github.io-blog/2020/11/24/%E5%AF%BC%E5%85%A5json%E6%96%87%E4%BB%B6%E8%87%B3mongodb-atlas/index.html">
 <meta property="og:site_name" content="zjx的博客">
 <meta property="og:description" content="12&gt;版本：MongoDB shell version v4.4.2  安装MongoDB Database Tools 该mongoimport工具是MongoDB数据库工具包的一部分： ➤遵循《数据库工具安装指南》进行安装mongoimport。  MongoDB Database Tools安装地址：https:&#x2F;&#x2F;www.mongodb.com&#x2F;try&#x2F;download&#x2F;datab">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zjx172.github.io/zjx172.github.io-blog/2020/11/24/%E5%AF%BC%E5%85%A5json%E6%96%87%E4%BB%B6%E8%87%B3mongodb-atlas/image-20201124200201307.png">
 <meta property="article:published_time" content="2020-11-24T06:21:11.000Z">
-<meta property="article:modified_time" content="2020-11-24T12:48:31.872Z">
+<meta property="article:modified_time" content="2020-11-25T07:04:17.871Z">
 <meta property="article:author" content="zjx">
 <meta property="article:tag" content="mongodb">
 <meta name="twitter:card" content="summary">
@@ -51,7 +51,7 @@
   };
 </script>
 
-  <title>导入json文件至MongoDB Atlas | zjx的博客</title>
+  <title>使用mongoimport导入json文件至MongoDB Atlas并应用到mongoose中 | zjx的博客</title>
   
 
 
@@ -173,7 +173,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85MongoDB-Database-Tools"><span class="nav-number">1.</span> <span class="nav-text">安装MongoDB Database Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80Mongo-Atlas%E7%BD%91%E7%AB%99%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7%E6%9F%A5%E8%AF%A2mongoimport%E8%BF%9E%E6%8E%A5mongo-atlas%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">打开Mongo Atlas网站登录账号查询mongoimport连接mongo atlas方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">References：</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85MongoDB-Database-Tools"><span class="nav-number">1.</span> <span class="nav-text">安装MongoDB Database Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80Mongo-Atlas%E7%BD%91%E7%AB%99%E7%99%BB%E5%BD%95%E8%B4%A6%E5%8F%B7%E6%9F%A5%E8%AF%A2mongoimport%E8%BF%9E%E6%8E%A5mongo-atlas%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">打开Mongo Atlas网站登录账号查询mongoimport连接mongo atlas方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E7%94%A8mongoimport%E5%AF%BC%E5%85%A5%E7%9A%84json%E6%96%87%E4%BB%B6%E5%BA%94%E7%94%A8%E5%88%B0mongoose%E4%B8%AD"><span class="nav-number">3.</span> <span class="nav-text">将用mongoimport导入的json文件应用到mongoose中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">References：</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -246,7 +246,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          导入json文件至MongoDB Atlas
+          使用mongoimport导入json文件至MongoDB Atlas并应用到mongoose中
         </h1>
 
         <div class="post-meta-container">
@@ -256,10 +256,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2020-11-24 14:21:11 / Modified: 20:48:31" itemprop="dateCreated datePublished" datetime="2020-11-24T14:21:11+08:00">2020-11-24</time>
+      <time title="Created: 2020-11-24 14:21:11" itemprop="dateCreated datePublished" datetime="2020-11-24T14:21:11+08:00">2020-11-24</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-25 15:04:17" itemprop="dateModified" datetime="2020-11-25T15:04:17+08:00">2020-11-25</time>
+      </span>
 
   
 </div>
@@ -288,6 +294,11 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoimport --uri mongodb+srv:&#x2F;&#x2F;dbUser:&lt;PASSWORD&gt;@cluster0.susyw.mongodb.net&#x2F;&lt;DATABASE&gt; --collection &lt;COLLECTION&gt; --type &lt;FILETYPE&gt; --file &lt;FILENAME&gt;</span><br></pre></td></tr></table></figure>
 
+<h2 id="将用mongoimport导入的json文件应用到mongoose中"><a href="#将用mongoimport导入的json文件应用到mongoose中" class="headerlink" title="将用mongoimport导入的json文件应用到mongoose中"></a>将用mongoimport导入的json文件应用到mongoose中</h2><p>解决来源：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/57135405/how-to-query-imported-json-using-mongoose">How to query imported json using Mongoose</a></p>
+<p>重点：使用mongoimport的时候定义collection最好写成复数形式，这样使用mongoose的时候定义对应的shema和model才能查询到</p>
+<p>例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//mongoimport --uri mongodb+srv://dbUser:&lt;PASSWORD&gt;@cluster0.susyw.mongodb.net/&lt;DATABASE&gt; //--collection &lt;COLLECTION&gt; --type &lt;FILETYPE&gt; --file &lt;FILENAME&gt;</span></span><br><span class="line"><span class="comment">//&lt;COLLECTION&gt;输入apps</span></span><br><span class="line"><span class="comment">//app.js</span></span><br><span class="line"><span class="keyword">const</span> mongoose=<span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> appSchema=<span class="keyword">new</span> mongoose.Schema(&#123;&#125;)</span><br><span class="line"><span class="built_in">module</span>.exports=mongoose.model(<span class="string">&#x27;App&#x27;</span>,appSchema)</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="keyword">const</span> App=<span class="built_in">require</span>(<span class="string">&#x27;./models/app.js&#x27;</span>)</span><br><span class="line">App.find(&#123;&#125;).then(<span class="function"><span class="params">result</span>=&gt;</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(result)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <h2 id="References："><a href="#References：" class="headerlink" title="References："></a>References：</h2><blockquote>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://docs.mongodb.com/database-tools/mongoimport/#bin.mongoimport">mongoDB|文献资料—mongoimport</a>                                             </li>
@@ -312,8 +323,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/zjx172.github.io-blog/2020/11/23/express%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%8E%A5%E5%85%A5MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="prev" title="express项目中接入MongoDB数据库">
-                  <i class="fa fa-chevron-left"></i> express项目中接入MongoDB数据库
+                <a href="/zjx172.github.io-blog/2020/11/23/express%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%8E%A5%E5%85%A5MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="prev" title="express项目中使用mongoose接入MongoDB数据库">
+                  <i class="fa fa-chevron-left"></i> express项目中使用mongoose接入MongoDB数据库
                 </a>
             </div>
             <div class="post-nav-item">
